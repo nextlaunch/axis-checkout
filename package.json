@@ -1,0 +1,43 @@
+{
+  "name": "axis-checkout",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/checkout.js",
+  "scripts": {
+    "start": "hjs-dev-server",
+    "build": "webpack",
+    "test": "mocha --require test/setup.js --recursive --compilers js:babel-register",
+    "test:watch": "npm t -- -w",
+    "cover": "nyc npm t && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react",
+      "stage-0"
+    ]
+  },
+  "keywords": [],
+  "author": "Cameron Roe <cameronjroe@gmail.com> (http://cameronroe.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-loader": "6.2.7",
+    "babel-preset-latest": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-stage-0": "6.16.0",
+    "babel-register": "6.18.0",
+    "chai": "3.5.0",
+    "codecov": "1.0.1",
+    "enzyme": "2.5.1",
+    "hjs-webpack": "8.4.1",
+    "jsdom": "9.8.3",
+    "mocha": "3.1.2",
+    "nyc": "8.3.2",
+    "react-addons-test-utils": "15.3.2"
+  },
+  "dependencies": {
+    "react": "15.3.2",
+    "react-dom": "15.3.2"
+  }
+}
