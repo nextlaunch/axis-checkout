@@ -2,4 +2,14 @@ body {
   padding: 0;
   margin: 4rem;
   font-family: 'Avenir', sans-serif;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  display: block;
+  margin-bottom: 4rem;
 }

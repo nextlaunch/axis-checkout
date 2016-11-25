@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import reactCSS from 'reactcss'
 import _ from 'lodash'
+import countries from './countries.json'
+import './index.scss'
 
 export default class Checkout extends Component {
 
@@ -8,28 +9,12 @@ export default class Checkout extends Component {
 
   constructor(props) {
     super(props)
-    this.styles = this.styles.bind(this)
-  }
-
-  styles(props) {
-    return reactCSS({
-      'default': {
-        form: {
-          display: 'inline-block'
-        },
-        form_first_name: {
-          border: '1px solid green'
-        }
-      }
-    })
   }
 
   render() {
-    const styles = this.styles(this.props)
-
     return (
       <div className='axis-checkout'>
-        <form style={styles.form}>
+        <form>
           <div className='form-group'>
             <label className='first-name'>
               <span>First Name</span>
@@ -99,6 +84,48 @@ export default class Checkout extends Component {
                 })}
               </select>
             </label>
+            <label className='cvc'>
+              <span>CVC</span>
+              <input 
+                name='cvc-code'
+                type="text"
+                className='form-control'
+                size='2'
+                data-stripe='cvc' />
+            </label>
+          </div>
+          <div className='form-group'>
+            <label className='zip-code'>
+              <span>Billing Zip</span>
+              <input
+                name='zip-code'
+                type='text'
+                required
+                className='form-control'
+                data-stripe='address_zip' />
+            </label>
+            <label className='country'>
+              <span>Country</span>
+              <select
+                name='country'>
+                {countries.map((country, i) => {
+                  return (
+                    <option 
+                      key={i}
+                      value={country.code}>
+                      {country.name}
+                    </option>
+                  )
+                })}
+              </select>
+            </label>
+          </div>
+          <div className='form-group'>
+            <button 
+              type='submit' 
+              className='btn btn-primary'>
+              Submit
+            </button>
           </div>
         </form>
       </div>

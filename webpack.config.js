@@ -1,6 +1,6 @@
-const getConfig = require('hjs-webpack');
+const getConfig = require('hjs-webpack')
 
-module.exports = getConfig({
+const config = getConfig({
   in: 'example/example.js',
   out: 'public',
   output: {
@@ -12,3 +12,5 @@ module.exports = getConfig({
   },
   clearBeforeBuild: true
 });
+
+module.exports = config

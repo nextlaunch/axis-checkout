@@ -57,18 +57,47 @@ test('contains an input for card number with stripe attribute', t => {
 })
 
 // exp month
-test('contains an expiration month with stripe attribute', t => {
+test('contains an expiration month with a stripe attribute', t => {
   const select = wrap.find('select[name="exp-month"]')
   t.is(select.type(), 'select')
   t.is(select.prop('data-stripe'), 'exp_month')
 })
 
 // exp year
-test('contains an expiration year with stripe attribute', t => {
+test('contains an expiration year with a stripe attribute', t => {
   const select = wrap.find('select[name="exp-year"]')
   t.is(select.type(), 'select')
   t.is(select.prop('data-stripe'), 'exp_year')
 })
+
+// cvc
+test('contains a security cvc code with a stripe attribute', t => {
+  const input = wrap.find('input[name="cvc-code"]')
+  t.is(input.type(), 'input')
+  t.is(input.prop('data-stripe'), 'cvc')
+})
+
+// zip code
+test('contains a zip code with a stripe attribute', t => {
+  const input = wrap.find('input[name="zip-code"]')
+  t.is(input.type(), 'input')
+  t.is(input.prop('data-stripe'), 'address_zip')
+})
+
+// country
+test('contains a country select', t => {
+  const select = wrap.find('select[name="country"]')
+  t.is(select.type(), 'select')
+})
+
+// confirm button
+test('contains a confirm button', t => {
+  const button = wrap.find('.btn')
+  t.is(button.type(), 'button')
+  t.is(button.text(), 'Submit')
+})
+
+
 
 
 

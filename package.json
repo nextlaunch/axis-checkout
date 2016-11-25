@@ -6,7 +6,7 @@
   "scripts": {
     "start": "hjs-dev-server",
     "build": "webpack",
-    "test": "ava **/*.test.js",
+    "test": "ava src/**/*.test.js",
     "test:watch": "npm t -- -w",
     "cover": "nyc npm t && nyc report --reporter=text-lcov > coverage.lcov && codecov -t d91044d9-aca4-4b06-a5cf-6343644004c0"
   },
@@ -37,12 +37,18 @@
     "babel-register": "6.18.0",
     "chai": "3.5.0",
     "codecov": "1.0.1",
+    "css-loader": "^0.26.0",
     "enzyme": "2.5.1",
     "hjs-webpack": "8.4.1",
     "jsdom": "9.8.3",
+    "json-loader": "^0.5.4",
     "mocha": "3.1.2",
+    "node-sass": "^3.13.0",
     "nyc": "8.3.2",
-    "react-addons-test-utils": "15.3.2"
+    "postcss-loader": "^1.1.1",
+    "react-addons-test-utils": "15.3.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1"
   },
   "dependencies": {
     "lodash": "^4.17.2",

@@ -1,0 +1,49 @@
+.axis-checkout {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 4rem;
+  box-shadow: 0px 0px 40px rgba(113, 113, 113, 0.18);
+
+  .form-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .first-name,
+  .last-name {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  .card-number {
+    flex: 1;
+  }
+
+  .exp-month,
+  .exp-year,
+  .cvc {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+  
+  .zip-code,
+  .country {
+    flex: 1;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  .country > span {
+    display: block;
+  }
+
+  .btn {
+    flex: 1;
+  }
+
+}
