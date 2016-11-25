@@ -6,9 +6,9 @@
   "scripts": {
     "start": "hjs-dev-server",
     "build": "webpack",
-    "test": "mocha --require test/setup.js --recursive --compilers js:babel-register",
+    "test": "ava **/*.test.js",
     "test:watch": "npm t -- -w",
-    "cover": "nyc npm t && nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "cover": "nyc npm t && nyc report --reporter=text-lcov > coverage.lcov && codecov -t d91044d9-aca4-4b06-a5cf-6343644004c0"
   },
   "babel": {
     "presets": [
@@ -17,10 +17,18 @@
       "stage-0"
     ]
   },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./test/setup.js"
+    ],
+    "babel": "inherit"
+  },
   "keywords": [],
-  "author": "Cameron Roe <cameronjroe@gmail.com> (http://cameronroe.com/)",
+  "author": "Cameron Roe <cameron@axisdefined.com>",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.17.0",
     "babel-cli": "6.18.0",
     "babel-loader": "6.2.7",
     "babel-preset-latest": "6.16.0",
@@ -38,6 +46,7 @@
   },
   "dependencies": {
     "react": "15.3.2",
-    "react-dom": "15.3.2"
+    "react-dom": "15.3.2",
+    "reactcss": "^1.1.1"
   }
 }
