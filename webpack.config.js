@@ -1,16 +1,21 @@
 const getConfig = require('hjs-webpack')
 
 const config = getConfig({
-  in: 'example/example.js',
-  out: 'public',
+  in: 'src/index.js',
+  out: 'lib',
   output: {
-    filename: 'example-bundle.js'
+    filename: '[name].js'
   },
   html: false,
   devServer: {
     contentBase: __dirname + '/example'
   },
   clearBeforeBuild: true
-});
+})
+
+config.entry = {
+  'checkout': config.entry,
+  'example-bundle': __dirname + '/example/example.js'
+}
 
 module.exports = config
