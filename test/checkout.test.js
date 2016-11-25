@@ -10,6 +10,7 @@ import test from 'ava'
 // ## Form Inputs
 // - first_name
 // - last_name
+// - card_number
 // - exp_month
 // - exp_year
 // - cvc
@@ -27,31 +28,47 @@ test.beforeEach(t => {
   wrap = shallow(<Checkout />)
 })
 
-test('should have a warpper with the right className (alt)', t => {
+test('is a warpper with the right className', t => {
   t.is(wrap.hasClass('axis-checkout'), true)
 })
 
-test('should contain a form element', t => {
+test('contains a form element', t => {
   t.is(wrap.childAt(0).type(), 'form')
 })
 
-test('contains first-name form-group', t => {
-  const form = wrap.find('form')
-  t.is(form.find('.form-group').hasClass('first-name'), true)
+// name
+test('contains .first-name', t => {
+  t.is(wrap.find('.first-name').type(), 'label')
 })
 
-test('should contain a first-name input', t => {
+test('contains .last-name', t => {
+  t.is(wrap.find('.last-name').type(), 'label')
+})
+
+test('contains an input for first name', t => {
   t.is(wrap.find('input[name="first-name"]').type(), 'input')
 })
 
+// card number
+test('contains an input for card number with stripe attribute', t => {
+  const input = wrap.find('input[name="card-number"]')
+  t.is(input.type(), 'input')
+  t.is(input.prop('data-stripe'), 'number')
+})
 
+// exp month
+test('contains an expiration month with stripe attribute', t => {
+  const select = wrap.find('select[name="exp-month"]')
+  t.is(select.type(), 'select')
+  t.is(select.prop('data-stripe'), 'exp_month')
+})
 
-
-
-
-
-
-
+// exp year
+test('contains an expiration year with stripe attribute', t => {
+  const select = wrap.find('select[name="exp-year"]')
+  t.is(select.type(), 'select')
+  t.is(select.prop('data-stripe'), 'exp_year')
+})
 
 
 
