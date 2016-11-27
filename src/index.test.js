@@ -96,12 +96,3 @@ test('contains a confirm button', t => {
   t.is(button.type(), 'button')
   t.is(button.text(), 'Submit')
 })
-
-
-
-
-
-
-
-
-
