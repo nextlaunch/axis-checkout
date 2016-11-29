@@ -5,8 +5,6 @@ import './index.scss'
 
 export default class Checkout extends Component {
 
-  static defaultProps = {}
-
   constructor(props) {
     super(props)
   }
