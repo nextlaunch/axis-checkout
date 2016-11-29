@@ -6,6 +6,7 @@
   "scripts": {
     "start": "hjs-dev-server",
     "build": "webpack",
+    "lint": "eslint src",
     "test": "ava src/**/*.test.js",
     "test:watch": "npm t -- -w",
     "cover": "nyc npm t && nyc report --reporter=text-lcov > coverage.lcov && codecov -t d91044d9-aca4-4b06-a5cf-6343644004c0"
@@ -30,6 +31,7 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-cli": "6.18.0",
+    "babel-eslint": "^7.1.1",
     "babel-loader": "6.2.7",
     "babel-preset-latest": "6.16.0",
     "babel-preset-react": "6.16.0",
@@ -39,6 +41,8 @@
     "codecov": "1.0.1",
     "css-loader": "^0.26.0",
     "enzyme": "2.5.1",
+    "eslint": "^3.11.1",
+    "eslint-plugin-react": "^6.7.1",
     "hjs-webpack": "8.4.1",
     "jsdom": "9.8.3",
     "json-loader": "^0.5.4",
