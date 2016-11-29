@@ -2,9 +2,9 @@
   "name": "axis-checkout",
   "version": "0.2.3",
   "description": "",
-  "main": "lib/checkout.js",
+  "main": "lib/main.js",
   "scripts": {
-    "start": "hjs-dev-server",
+    "start": "NODE_ENV=development webpack-dev-server",
     "build": "webpack",
     "lint": "eslint src",
     "test": "ava src/**/*.test.js",
@@ -44,6 +44,7 @@
     "eslint": "^3.11.1",
     "eslint-plugin-react": "^6.7.1",
     "hjs-webpack": "8.4.1",
+    "html-webpack-plugin": "^2.24.1",
     "jsdom": "9.8.3",
     "json-loader": "^0.5.4",
     "node-sass": "^3.13.0",
@@ -52,7 +53,9 @@
     "react-addons-test-utils": "15.3.2",
     "redbox-react": "^1.3.3",
     "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.12"
   },
   "dependencies": {
     "lodash": "^4.17.2",
